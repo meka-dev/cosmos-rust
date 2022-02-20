@@ -96,6 +96,16 @@ impl TryFrom<&BaseAccountJson> for BaseAccount {
     }
 }
 
+#[derive(Clone, Debug, Deserialize, Serialize)]
+pub struct QueryAccountRequest {
+    pub address: String,
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize)]
+pub struct QueryAccountReponse {
+    pub account: Option<BaseAccount>,
+}
+
 mod string {
     use std::fmt::Display;
     use std::str::FromStr;
