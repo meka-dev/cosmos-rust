@@ -19,12 +19,14 @@ pub mod cosmwasm;
 #[cfg_attr(docsrs, doc(cfg(feature = "dev")))]
 pub mod dev;
 
+mod auth;
 mod base;
 mod decimal;
 mod error;
 mod prost_ext;
 
 pub use crate::{
+    auth::BaseAccount,
     base::{AccountId, Coin, Denom},
     decimal::Decimal,
     error::{Error, Result},
