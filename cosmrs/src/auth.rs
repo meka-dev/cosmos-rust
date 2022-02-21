@@ -12,7 +12,7 @@ use crate::{crypto::PublicKey, ErrorReport, Result};
 #[serde(try_from = "BaseAccountJson", into = "BaseAccountJson")]
 pub struct BaseAccount {
     pub address: String,
-    pub pub_key: PublicKey,
+    pub pub_key: Option<PublicKey>,
     pub account_number: u64,
     pub sequence: u64,
 }
@@ -51,7 +51,7 @@ pub struct BaseAccountJson {
     #[serde(with = "string")]
     pub account_number: u64,
     pub address: String,
-    pub pub_key: PublicKey,
+    pub pub_key: Option<PublicKey>,
     #[serde(with = "string")]
     pub sequence: u64,
 }
