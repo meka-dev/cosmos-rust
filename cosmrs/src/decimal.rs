@@ -13,7 +13,7 @@ use std::{
 ///
 /// [1]: https://pkg.go.dev/github.com/cosmos/cosmos-sdk/types#Dec
 #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-pub struct Decimal(u64);
+pub struct Decimal(pub u64);
 
 impl FromStr for Decimal {
     type Err = ErrorReport;
