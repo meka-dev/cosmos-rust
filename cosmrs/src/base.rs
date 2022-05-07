@@ -128,7 +128,7 @@ impl Serialize for AccountId {
 }
 
 /// Coin defines a token with a denomination and an amount.
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord, Deserialize, Serialize)]
 pub struct Coin {
     /// Denomination
     pub denom: Denom,
@@ -172,7 +172,7 @@ impl From<&Coin> for proto::cosmos::base::v1beta1::Coin {
 }
 
 /// Denomination.
-#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord, Deserialize, Serialize)]
 pub struct Denom(String);
 
 impl AsRef<str> for Denom {

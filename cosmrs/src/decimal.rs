@@ -2,6 +2,8 @@
 //!
 //! [1]: https://pkg.go.dev/github.com/cosmos/cosmos-sdk/types#Dec
 
+use serde::{Deserialize, Serialize};
+
 use crate::{ErrorReport, Result};
 use std::{
     fmt,
@@ -12,7 +14,7 @@ use std::{
 /// Decimal type which follows Cosmos [Cosmos `sdk.Dec`][1] conventions.
 ///
 /// [1]: https://pkg.go.dev/github.com/cosmos/cosmos-sdk/types#Dec
-#[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord, Deserialize, Serialize)]
 pub struct Decimal(pub u64);
 
 impl FromStr for Decimal {
