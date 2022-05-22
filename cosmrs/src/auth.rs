@@ -102,7 +102,7 @@ pub struct QueryAccountRequest {
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
-pub struct QueryAccountReponse {
+pub struct QueryAccountResponse {
     pub account: Option<BaseAccount>,
 }
 
