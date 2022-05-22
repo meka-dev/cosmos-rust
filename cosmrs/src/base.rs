@@ -3,14 +3,14 @@
 use crate::{proto, Decimal, Error, ErrorReport, Result};
 use eyre::WrapErr;
 use serde::{de, de::Error as _, ser, Deserialize, Serialize};
-use std::{fmt, str::FromStr};
+use std::{fmt, hash::Hash, str::FromStr};
 use subtle_encoding::bech32;
 
 /// Maximum allowed length (in bytes) for an address.
 pub const MAX_ADDRESS_LENGTH: usize = 255;
 
 /// Account identifiers
-#[derive(Clone, Eq, PartialEq, PartialOrd, Ord)]
+#[derive(Clone, Eq, Hash, PartialEq, PartialOrd, Ord)]
 pub struct AccountId {
     /// Account ID encoded as Bech32
     bech32: String,
